@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: 'Roboto',sans-serif;
+}
+
+button{
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root{
+  --primary-color3:black;
+  --primary-color1: #ffffff;
+  --primary-color2: #e2e2e2;
+  --border-color: gray;
+  --icon-svg-color:rgb(73, 73, 73);
+  --text-color:#000000;
+  --secondary-color:#2a2a74;
+  --secondary-hover-color:#1a1a42;
+}
+
+[data-theme="dark"] {
+  --primary-color3: white;              /* Opposite of black */
+  --primary-color1: #000000;            /* Opposite of white */
+  --primary-color2: #1d1d1d;            /* Opposite of light gray (#e2e2e2) */
+  --border-color: lightgray;            /* Opposite of gray */
+  --icon-svg-color: rgb(182, 182, 182); /* Opposite of rgb(73, 73, 73) */
+  --text-color: #ffffff;                /* Opposite of black */
+   /* Opposite of #1a1a42 (dark indigo → pale yellow) */
+}
+
+
+.secondary-border-color{
+  border-color: var(--secondary-color) !important;
+}
