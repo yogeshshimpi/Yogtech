@@ -288,10 +288,14 @@
 }
 
 @media (max-width:470px) {
+    .hero{
+        padding: 30px;
+    }
     .log_in_sec{
         width: 100%;
+        
     }
-}
-@media (max-width:420px) {
-   
+    .authLogin button{
+        width: 100%;
+    
 }
