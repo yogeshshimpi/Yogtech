@@ -24,7 +24,7 @@ const Index = () => {
 
   useEffect(() => {
     if (username.current) {
-      const a = username.current.focus();
+      username.current.focus();
     }
   }, []);
   const handleCheckInputFill = (e) => {

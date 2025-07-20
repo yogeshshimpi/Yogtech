@@ -1,6 +1,6 @@
 import React from "react";
 
-const dark_theme = ({size = 24, color = "black",className= "", ...props},ref) => {
+const dark_theme = ({size = 24, color = "black",className= ""},ref) => {
   return (
     <svg
     ref={ref}
