@@ -206,6 +206,26 @@
     border-top-color: var(--secondary-color);
     animation: loader 1s infinite cubic-bezier(0.38, 0.09, 0.58, 0.86);
 }
+.authLogin{
+    display: flex;
+    gap: 30px;
+}
+.authLogin button{
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color2);
+    border-radius:  5px;
+    border: 2px solid var(--border-color);
+    
+}
+.authLogin button img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
 
 @keyframes loader {
     from{

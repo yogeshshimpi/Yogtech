@@ -5,6 +5,10 @@ import Visibility from "../component/svg/visibility";
 import Visibility_off from "../component/svg/visibility_off";
 import Dark_theme from "../component/svg/dark_theme";
 import Light_theme from "../component/svg/white_theme";
+import { loginWithFacebook ,loginWithGitHub, loginWithGoogle } from "../auth";
+import facebook from "../assets/facebook.png"
+import github from "../assets/github.png"
+import google from "../assets/google.png"
 
 const Index = () => {
   const [usernameF, setUsernameF] = useState(false);
@@ -134,6 +138,11 @@ const Index = () => {
             <div className="hseperator"></div>
             OR
             <div className="hseperator"></div>
+          </div>
+          <div className="authLogin">
+            <button onClick={loginWithGoogle}><img src={google} alt="" /> Google <div></div></button>
+            <button onClick={loginWithFacebook}><img src={facebook} alt="" />Facebook <div></div></button>
+            <button onClick={loginWithGitHub}><img src={github} alt="" />Git Hub <div></div></button>
           </div>
           <div className="forgetPassword">Forget password?</div>
           <div className="error"></div>
