@@ -140,9 +140,9 @@ const Index = () => {
             <div className="hseperator"></div>
           </div>
           <div className="authLogin">
-            <button onClick={loginWithGoogle}><img src={google} alt="" /> Google <div></div></button>
-            <button onClick={loginWithFacebook}><img src={facebook} alt="" />Facebook <div></div></button>
-            <button onClick={loginWithGitHub}><img src={github} alt="" />Git Hub <div></div></button>
+            <button type="button" onClick={loginWithGoogle}><img src={google} alt="" /> Google <div></div></button>
+            <button type="button" onClick={loginWithFacebook}><img src={facebook} alt="" />Facebook <div></div></button>
+            <button type="button" onClick={loginWithGitHub}><img src={github} alt="" />Git Hub <div></div></button>
           </div>
           <div className="forgetPassword">Forget password?</div>
           <div className="error"></div>
