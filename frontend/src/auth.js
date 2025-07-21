@@ -2,10 +2,7 @@ import { FacebookAuthProvider , GoogleAuthProvider, GithubAuthProvider, signInWi
 
 import {auth} from "./firebase"
 
-export const loginWithFacebook = () => {
-  const provider = new FacebookAuthProvider();
-  return signInWithPopup(auth, provider);
-};
+
 
 export const loginWithGitHub = () => {
   const provider = new GithubAuthProvider();
