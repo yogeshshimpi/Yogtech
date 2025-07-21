@@ -313,3 +313,14 @@
     width: 100%;
   }
 }
+
+@media (max-width: 400px) {
+    .app_name{
+         font-size: 45px;
+    }
+}
+@media (max-width: 330px) {
+    .app_name{
+         font-size: 40px;
+    }
+}
