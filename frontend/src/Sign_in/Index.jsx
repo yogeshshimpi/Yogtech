@@ -6,7 +6,7 @@ import Visibility_off from "../component/svg/visibility_off";
 import Dark_theme from "../component/svg/dark_theme";
 import Light_theme from "../component/svg/white_theme";
 import { loginWithGitHub, loginWithGoogle } from "../auth";
-import github from "../assets/github.png";
+import GithubIcon from "../component/svg/GithubIcon";
 import google from "../assets/google.png";
 import { useNavigate } from "react-router-dom";
 
@@ -75,7 +75,7 @@ const Index = () => {
       <section className={styles.sign_in_page}>
         <div className={styles.text_sec}>
           <div className={styles.heading}>
-            Connect, Share & Grow with <span>Yogtech</span>
+            Connect, Share & Grow with <span>{APP_NAME}</span>
           </div>
           <div className={styles.subheading}>
             Join a vibrant community of creators, friends, and thinkers. Share your moments,
@@ -89,14 +89,14 @@ const Index = () => {
             <form className={styles.input_sec}>
               <div
                 className={`${styles.input_field} ${
-                  usernameFocus ? styles.secondary_border_color : ""
+                  usernameFocus ? "secondary_border_color" : ""
                 }`}
               >
                 <label htmlFor="username">
                   <span className={usernameF ? styles.label2 : styles.label1}>
                     Phone number, username or email id
                   </span>
-                  <input
+                  <input autuComplete = "off" 
                     type="text"
                     id="username"
                     ref={username}
@@ -115,14 +115,14 @@ const Index = () => {
 
               <div
                 className={`${styles.input_field} ${
-                  passwordFocus ? styles.secondary_border_color : ""
+                  passwordFocus ? "secondary_border_color" : ""
                 }`}
               >
                 <label htmlFor="password">
                   <span className={passwordF ? styles.label2 : styles.label1}>
                     Password
                   </span>
-                  <input
+                  <input 
                     id="password"
                     type={pVisibility ? "text" : "password"}
                     onFocus={() => {
@@ -166,8 +166,7 @@ const Index = () => {
               <img src={google} alt="" /> Google <div></div>
             </button>
             <button type="button" onClick={loginWithGitHub}>
-              <img src={github} alt="" />
-              Git Hub <div></div>
+        <GithubIcon className={styles.img}/>              Git Hub <div></div>
             </button>
           </div>
 

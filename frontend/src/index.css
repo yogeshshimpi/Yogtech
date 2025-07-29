@@ -9,15 +9,16 @@
 button{
   background-color: transparent;
   outline: none;
-  cursor: pointer;
+  cursor: pointer !;
   -webkit-tap-highlight-color: transparent;
 }
 
 :root{
   --primary-color3:black;
   --primary-color1: #ffffff;
-  --primary-color2: #e2e2e2;
-  --border-color: gray;
+  --primary-color2: #f7f7f7;
+  --primary-color4:#f6f6f6;
+  --border-color: #ccc;
   --icon-svg-color:rgb(73, 73, 73);
   --text-color:#000000;
   --secondary-color:#2a2a74;
@@ -27,14 +28,15 @@ button{
 [data-theme="dark"] {
   --primary-color3: white;              /* Opposite of black */
   --primary-color1: #000000;            /* Opposite of white */
-  --primary-color2: #1d1d1d;            /* Opposite of light gray (#e2e2e2) */
-  --border-color: lightgray;            /* Opposite of gray */
+  --primary-color2: #080808;            /* Opposite of light gray (#e2e2e2) */
+  --primary-color4:#1A1A1A;
+  --border-color: #333333;            /* Opposite of gray */
   --icon-svg-color: rgb(182, 182, 182); /* Opposite of rgb(73, 73, 73) */
   --text-color: #ffffff;                /* Opposite of black */
    /* Opposite of #1a1a42 (dark indigo → pale yellow) */
 }
 
 
-.secondary-border-color{
+.secondary_border_color{
   border-color: var(--secondary-color) !important;
 }

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "devMobile": "vite --host 10.104.243.72",
+    "devMobile": "vite --host  10.79.30.72",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
