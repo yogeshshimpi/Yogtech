@@ -78,13 +78,10 @@
 .input_field {
   width: 100%;
   display: flex;
-  background-color: var(--primary-color2);
-  padding: 5px;
-  border-radius: 8px;
-  height: 50px;
-  border: 1px solid var(--border-color);
-  transition-duration: 0.2s;
+  flex-direction: column;
+  gap: 8px;
 }
+
 
 
 
@@ -98,31 +95,64 @@
   font-size: 12px;
 }
 
-.input_field:focus-within {
-  border: 1px solid var(--border-color);
+.input_field .inputBox:focus-within {
+  border: 2px solid var(--border-color);
   box-shadow: 0 0 0 3px rgba(75, 71, 161, 0.2)
 }
 
-.input_field label {
+.input_field .inputBox {
+  display: flex;
+  background-color: var(--primary-color2);
+  padding: 5px 10px;
+  border-radius: 8px;
+  height: 50px;
+  border: 2px solid var(--border-color);
+  transition-duration: 0.2s;
+}
+.input_field .inputBox label{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.vrtBox{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 3px;
-  padding: 5px;
-  width: 100%;
+  gap: 8px;
 }
-
-.input_field label span {
+.input_field .inputBox span {
   transition-duration: 0.3s;
   color: #808080;
 }
 
-.input_field label input {
+.input_field .inputBox input {
+  
   background-color: transparent;
   border: none;
   outline: none;
   font-size: 15px;
 }
+
+.input_field .inputBox .passwordV{
+  background-color: var(--primary-color2);
+  border: 2px solid transparent;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+}
+
+.input_field .inputBox .passwordV:hover{
+  border-color:var(--border-color) ;
+}
+.input_field .inputBox .passwordV .icon{
+  fill: var(--primary-color3);
+  height: 18px;
+  width: 18px;
+}
+
 
 .stageSec{
   display: flex;
@@ -134,24 +164,26 @@
   width: 100%;
   display: flex;;
   flex-direction: column;
-  gap: 15px;
+  /* gap: 15px; */
   height: 100%;
   position: absolute;
+  justify-content: space-evenly ;
   transition-duration: 0.3s;
 }
 .page_stage .stageInput{
-  height:100%;
+  /* height:100%; */
   justify-self: center;
   display: flex;;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .stage_heading{
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Segoe ui';
   align-self: center;
   margin-bottom: 10px;
 }
@@ -229,6 +261,9 @@ fill: var(--primary-color1);
 
 .stageInput .stageSubHeading{
   font-size: 16px;
+  color: var(--subheading-color);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .horOtpGroup{
@@ -285,4 +320,15 @@ fill: var(--primary-color1);
   to{
     outline-offset: 3px;
   }
+}
+
+.error{
+  height: 0px;
+  font-size: 13px;
+  margin-left: 10px;
+  
+  color: var(--error-color);
+  /* display: none; */
+  overflow: hidden;
+  transition-duration: 0.1s;
 }

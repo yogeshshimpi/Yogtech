@@ -21,8 +21,10 @@ button{
   --border-color: #ccc;
   --icon-svg-color:rgb(73, 73, 73);
   --text-color:#000000;
+  --subheading-color : #777777;
   --secondary-color:#2a2a74;
   --secondary-hover-color:#1a1a42;
+  --error-color:rgb(255 38 38);
 }
 
 [data-theme="dark"] {
