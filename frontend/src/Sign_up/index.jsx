@@ -7,6 +7,9 @@ import PasswordIcon from "../component/svg/passwordIcon";
 import UserIcon from "../component/svg/userIcon";
 import Visibility from "../component/svg/visibility";
 import Visibility_off from "../component/svg/visibility_off";
+import { loginWithGitHub, loginWithGoogle } from "../auth";
+import GithubIcon from "../component/svg/GithubIcon";
+import google from "../assets/google.png";
 
 const Index = () => {
   const [inputF, setInputF] = useState({
@@ -35,7 +38,7 @@ const Index = () => {
     3: "rightSideStage",
   });
 
-  const [pVisibility,setPVisibility] = useState(false)
+  const [pVisibility, setPVisibility] = useState(false);
 
   const activeStage = useRef(1);
 
@@ -45,7 +48,7 @@ const Index = () => {
 
   const inputError = useRef({});
 
-  const [otpWay , setOtpWay] = useState("")
+  const [otpWay, setOtpWay] = useState("");
 
   useEffect(() => {
     if (inputField.current["username"]) {
@@ -241,10 +244,10 @@ const Index = () => {
         } else {
           inputError.current[3].style.height = "0px";
           inputError.current[3].textContent = "";
-          if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailOrPhone.value)){
-            setOtpWay("Email Id")
-          }else if(/^[0-9]{10}$/.test(emailOrPhone.value)){
-            setOtpWay("Phone number")
+          if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailOrPhone.value)) {
+            setOtpWay("Email Id");
+          } else if (/^[0-9]{10}$/.test(emailOrPhone.value)) {
+            setOtpWay("Phone number");
           }
         }
       }
@@ -303,28 +306,28 @@ const Index = () => {
       if (isValid) {
         handleNextPage(true);
       }
-    }else if(activeStage.current === 3){
-      let otp = ""
-      let isValid = true
-      Object.keys(otpField.current).forEach((key)=>{
-          otp += otpField.current[key].value
-      })
-      if(Object.keys(otp).length != 4){
-        isValid = false
-        handleErrorDisplay(1,'Please enter valid otp.')
-      }else{
-              inputError.current[1].style.height = "0px";
-              inputError.current[1].textContent = "";
+    } else if (activeStage.current === 3) {
+      let otp = "";
+      let isValid = true;
+      Object.keys(otpField.current).forEach((key) => {
+        otp += otpField.current[key].value;
+      });
+      if (Object.keys(otp).length != 4) {
+        isValid = false;
+        handleErrorDisplay(1, "Please enter valid otp.");
+      } else {
+        inputError.current[1].style.height = "0px";
+        inputError.current[1].textContent = "";
       }
-      if(isValid){
-        console.log("success")
+      if (isValid) {
+        console.log("success");
       }
     }
   };
 
   const handlePasswordVisibility = () => {
-    setPVisibility(!pVisibility)
-  }
+    setPVisibility(!pVisibility);
+  };
   return (
     <>
       <section className="hero">
@@ -662,10 +665,10 @@ const Index = () => {
                         />
                       </div>
                       <div
-                          ref={(e) => {
-                            inputError.current[1] = e;
-                          }}
-                          className="error"></div>
+                        ref={(e) => {
+                          inputError.current[1] = e;
+                        }}
+                        className="error"></div>
                     </div>
                   </>
                 ) : null}
@@ -718,8 +721,23 @@ const Index = () => {
               )}
             </div>
           </form>
+          <div className="seperate">
+            <div className="bar"></div>
+            <div className="or">OR</div>
+            <div className="bar"></div>
+          </div>
+          <div className="authLogin">
+            <button type="button" onClick={loginWithGoogle}>
+              <img src={google} className="img" alt="" /> Google <div></div>
+            </button>
+            <button type="button" onClick={loginWithGitHub}>
+              <GithubIcon className="img" /> Git Hub <div></div>
+            </button>
+          </div>
+          <div className="signIn">
+            Already have an account? <button>Sign In</button>
+          </div>
         </div>
-        div
       </section>
     </>
   );

@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 50px 20px;
+    padding: 50px 40px;
     border-radius: 8px;
     box-shadow: 0px 0px 20px 0px #3d3d3d4a;
     overflow: hidden;
@@ -70,7 +70,7 @@
     flex-direction: column;
     /* align-items: center; */
   /* width: calc(100% - 10px); */
-  margin-inline: 20px;
+  /* margin-inline: 20px; */
     gap: 10px;
     /* position: relative; */
 }
@@ -97,14 +97,14 @@
 
 .input_field .inputBox:focus-within {
   border: 2px solid var(--border-color);
-  box-shadow: 0 0 0 3px rgba(75, 71, 161, 0.2)
+  /* box-shadow: 0 0 0 3px rgba(64, 64, 64, 0.2) */
 }
 
 .input_field .inputBox {
   display: flex;
   background-color: var(--primary-color2);
   padding: 5px 10px;
-  border-radius: 8px;
+  border-radius: 5px;
   height: 50px;
   border: 2px solid var(--border-color);
   transition-duration: 0.2s;
@@ -331,4 +331,58 @@ fill: var(--primary-color1);
   /* display: none; */
   overflow: hidden;
   transition-duration: 0.1s;
+}
+.seperate{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.seperate .bar{
+  width: 100%;
+  border: 1px solid var(--border-color);
+  height: 0px;
+  
+}
+.seperate .or{
+  color: var(--border-color);
+  font-weight: 600;
+}
+
+.authLogin{
+  display: flex;
+  gap: 40px;
+}
+
+.authLogin button{
+  font-size: 16px;
+  font-weight: 500;
+    width: 100%;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  transition-duration: 0.2s;
+}
+.authLogin button:hover{
+  background-color: var(--primary-color2);
+}
+.authLogin button .img{
+  height: 30px;
+  width:  30px;
+  fill: var(--primary-color3);
+}
+
+.signIn{
+  display: flex;
+  justify-content: center;
+  font-size: small;
+  gap: 5px;
+}
+.signIn button{
+  border: none;
+  color: blue;
 }
