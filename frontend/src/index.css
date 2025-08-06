@@ -25,17 +25,20 @@ button{
   --secondary-color:#2a2a74;
   --secondary-hover-color:#1a1a42;
   --error-color:rgb(255 38 38);
+  --box-shadow: 0px 0px 20px 0px #3d3d3d4a;
+  
 }
 
 [data-theme="dark"] {
   --primary-color3: white;              /* Opposite of black */
-  --primary-color1: #000000;            /* Opposite of white */
-  --primary-color2: #080808;            /* Opposite of light gray (#e2e2e2) */
+  --primary-color1: #191919;            /* Opposite of white */
+  --primary-color2: #383838;            /* Opposite of light gray (#e2e2e2) */
   --primary-color4:#1A1A1A;
   --border-color: #333333;            /* Opposite of gray */
   --icon-svg-color: rgb(182, 182, 182); /* Opposite of rgb(73, 73, 73) */
   --text-color: #ffffff;                /* Opposite of black */
-   /* Opposite of #1a1a42 (dark indigo → pale yellow) */
+  
+  --box-shadow:  0px 0px 10px 0px #0000007c; /* Opposite of #1a1a42 (dark indigo → pale yellow) */
 }
 
 

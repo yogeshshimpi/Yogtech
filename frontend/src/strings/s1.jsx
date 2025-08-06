@@ -1,1 +1,1 @@
-export const APP_NAME = "yogtech"
+export const APP_NAME = "Yogtech"

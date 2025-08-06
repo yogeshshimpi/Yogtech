@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     /* align-items: center; */
+    background-color: var(--primary-color1);
 }
 .logInSec{
     width: 460px;
@@ -12,8 +13,9 @@
     gap: 20px;
     padding: 50px 40px;
     border-radius: 8px;
-    box-shadow: 0px 0px 20px 0px #3d3d3d4a;
+    box-shadow: var(--box-shadow);
     overflow: hidden;
+    justify-content: center;
 }
 .app_name {
   font-size: 40px;
@@ -53,7 +55,12 @@
 .steps .circle .Icon{
   height: 20px;
   width: 20px;
-  stroke: var(--primary-color3);
+  fill: var(--primary-color3);
+}
+.secondary_color .Icon{
+  height: 20px;
+  width: 20px;
+  fill: white !important;
 }
 .steps .circle .icon1{
   height: 15px;
@@ -101,8 +108,8 @@
 }
 
 .input_field .inputBox {
-  display: flex;
-  background-color: var(--primary-color2);
+  display: flex;  
+  /* background-color: var(--primary-color2); */
   padding: 5px 10px;
   border-radius: 5px;
   height: 50px;
@@ -133,7 +140,6 @@
 }
 
 .input_field .inputBox .passwordV{
-  background-color: var(--primary-color2);
   border: 2px solid transparent;
   height: 100%;
   width: 40px;
@@ -385,4 +391,80 @@ fill: var(--primary-color1);
 .signIn button{
   border: none;
   color: blue;
+}
+
+
+@media (max-width: 424px) {
+  .logInSec{
+    padding-inline:  20px;
+  }
+} 
+@media (max-width: 406px) {
+  .stage_heading{
+    font-size: 20px;
+  }
+} 
+@media (max-width: 384px) {
+  .logInSec .heading{
+    font-size: 17px;
+  }
+} 
+@media (max-width: 361px) {
+  .logInSec .app_name{
+    font-size: 35px;
+  }
+  .logInSec .heading{
+    font-size: 14px;
+  }
+} 
+@media (max-width: 333px) {
+  .stage_heading{
+    font-size: 17px;
+  }
+  .stageInput .stageSubHeading{
+    font-size:12px;
+  }
+} 
+
+.webTheme {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  border: none;
+  padding: 10px;
+  background-color: var(--primary-color2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dark_icon {
+  transition-duration: 0.4s;
+}
+
+.dark_icon1 {
+  transform: translateY(0px);
+}
+
+.dark_icon2 {
+  transform: translateY(50px);
+}
+
+.white_icon {
+  position: absolute;
+  transition-duration: 0.4s;
+}
+
+.white_icon1 {
+  transform: translateY(-50px);
+}
+
+.white_icon2 {
+  transform: translateY(0px);
+}
+
+.hide {
+  display: none;
 }

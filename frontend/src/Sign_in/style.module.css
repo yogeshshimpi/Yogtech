@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 50px;
-  padding: 50px;
+  /* padding: 50px; */
 }
 
 .webTheme {
@@ -90,17 +90,22 @@
 }
 
 .log_in_sec {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   width: 440px;
   gap: 30px;
+    padding: 50px 40px;
+    box-shadow: var(--box-shadow);
   border-radius: 8px;
+  justify-content: center;
 }
 
 .sign_in {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  
 }
 
 .app_name {
@@ -118,19 +123,16 @@
   gap: 10px;
 }
 
+
 .input_field {
+  width: 100%;
   display: flex;
-  background-color: var(--primary-color2);
-  padding: 5px;
-  border-radius: 8px;
-  height: 50px;
-  border: 1px solid var(--border-color);
-  transition-duration: 0.2s;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.secondary_border_color {
-  border-color: var(--secondary-color);
-}
+
+
 
 .label1 {
   font-size: 15px;
@@ -142,26 +144,37 @@
   font-size: 12px;
 }
 
-.input_field:focus-within {
-  border: 1px solid var(--border-color);
-  box-shadow: 0 0 0 3px rgba(75, 71, 161, 0.2)
+.input_field .inputBox:focus-within {
+  border: 2px solid var(--border-color);
+  /* box-shadow: 0 0 0 3px rgba(64, 64, 64, 0.2) */
 }
 
-.input_field label {
+.input_field .inputBox {
+  display: flex;  
+  /* background-color: var(--primary-color2); */
+  padding: 5px 10px;
+  border-radius: 5px;
+  height: 50px;
+  border: 2px solid var(--border-color);
+  transition-duration: 0.2s;
+}
+
+.input_field .inputBox label{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 3px;
-  padding: 5px;
   width: 100%;
+  flex-direction: column;
+}
+.secondary_border_color {
+  border-color: var(--secondary-color);
 }
 
-.input_field label span {
+
+.input_field .inputBox span {
   transition-duration: 0.3s;
   color: #808080;
 }
 
-.input_field label input {
+.input_field .inputBox input {
   background-color: transparent;
   border: none;
   outline: none;
@@ -174,21 +187,21 @@
   align-items: center;
   justify-content: center;
   border: none;
+  background-color: transparent;
   border-radius: 50%;
   transition-duration: 0.2s;
+  border: 2px solid transparent;
 }
 
 .passwordV:hover {
-  background-color: var(--icon-svg-color);
-}
-
-.passwordV:hover .icon {
-  fill: var(--primary-color1);
+  border-color: var(--border-color);
 }
 
 .icon {
   transition-duration: 0.2s;
-  fill: var(--icon-svg-color);
+  height: 18px;
+  width: 18px;
+  fill: var(--primary-color3);
 }
 
 .submit {
@@ -228,13 +241,12 @@
 
 .authLogin button {
   padding: 10px;
-  height: 45px;
+  height: 50px;
   width: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-color2);
-  border-radius: 8px;
+  border-radius: 5px;
   border: 2px solid var(--border-color);
   font-size: 15px;
 }

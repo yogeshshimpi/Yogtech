@@ -88,11 +88,12 @@ const Index = () => {
             <div className={styles.app_name}>{APP_NAME}</div>
             <form className={styles.input_sec}>
               <div
-                className={`${styles.input_field} ${
-                  usernameFocus ? "secondary_border_color" : ""
-                }`}
+                className={styles.input_field}
               >
-                <label htmlFor="username">
+               <div  className={`${styles.inputBox} ${
+                  usernameFocus ? "secondary_border_color" : ""
+                }`}>
+                 <label htmlFor="username">
                   <span className={usernameF ? styles.label2 : styles.label1}>
                     Phone number, username or email id
                   </span>
@@ -111,14 +112,16 @@ const Index = () => {
                     }}
                   />
                 </label>
+               </div>
               </div>
 
               <div
-                className={`${styles.input_field} ${
-                  passwordFocus ? "secondary_border_color" : ""
-                }`}
+                className={styles.input_field} 
               >
-                <label htmlFor="password">
+               <div   className={`${styles.inputBox} ${
+                  passwordFocus ? "secondary_border_color" : ""
+                }`}>
+                 <label htmlFor="password">
                   <span className={passwordF ? styles.label2 : styles.label1}>
                     Password
                   </span>
@@ -135,8 +138,8 @@ const Index = () => {
                       setPasswordFocus(false);
                     }}
                   />
-                </label>
-                <button
+                  </label>
+                   <button
                   type="button"
                   className={styles.passwordV}
                   onClick={handlePasswordVisibility}
@@ -147,6 +150,8 @@ const Index = () => {
                     <Visibility_off size="20" className={styles.icon} />
                   )}
                 </button>
+               </div>
+               
               </div>
 
               <button type="button" className={styles.submit}>

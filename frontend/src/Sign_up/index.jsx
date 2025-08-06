@@ -10,8 +10,12 @@ import Visibility_off from "../component/svg/visibility_off";
 import { loginWithGitHub, loginWithGoogle } from "../auth";
 import GithubIcon from "../component/svg/GithubIcon";
 import google from "../assets/google.png";
+import { useNavigate } from "react-router-dom";
+import Dark_theme from "../component/svg/dark_theme";
+import Light_theme from "../component/svg/white_theme";
 
 const Index = () => {
+  const navigate = new useNavigate()
   const [inputF, setInputF] = useState({
     username: false,
     fullName: false,
@@ -50,12 +54,25 @@ const Index = () => {
 
   const [otpWay, setOtpWay] = useState("");
 
+  const themebtn = useRef();
+  const lightTheme = useRef(null);
+  const darkTheme = useRef(null);  
+  const [theme, setTheme] = useState(false);
+  
   useEffect(() => {
     if (inputField.current["username"]) {
       inputField.current["username"].focus();
     }
   }, []);
-
+const handleTheme = () => {
+    setTheme(!theme);
+    themebtn.current.disabled = true;
+    const themeName = theme ? "white" : "dark";
+    document.documentElement.setAttribute("data-theme", themeName);
+    setTimeout(() => {
+      themebtn.current.disabled = false;
+    }, 400);
+  };
   const handleCheckInputFill = (e) => {
     updateInputF(e.target.id, e.target.value !== "");
   };
@@ -299,7 +316,7 @@ const Index = () => {
           handleErrorDisplay(2, "The password is not match.");
         } else {
           inputError.current[2].style.height = "0px";
-          inputError.current[3].textContent = "";
+          inputError.current[2].textContent = "";
         }
       }
 
@@ -320,9 +337,12 @@ const Index = () => {
         inputError.current[1].textContent = "";
       }
       if (isValid) {
-        console.log("success");
-      }
+            // handleNextPage(true);
+  }
     }
+  };
+  const handleRedirectSignIn = () => {
+    navigate("/");
   };
 
   const handlePasswordVisibility = () => {
@@ -331,6 +351,21 @@ const Index = () => {
   return (
     <>
       <section className="hero">
+         <button
+        className="webTheme"
+        ref={themebtn}
+        onClick={handleTheme}
+      >
+        <Dark_theme
+          ref={darkTheme}
+          className={`dark_icon ${theme ? "dark_icon2" : "dark_icon1"}`}
+        />
+        <Light_theme
+          ref={lightTheme}
+          className={`white_icon ${theme ? "white_icon2" : "white_icon1"}`}
+        />
+      </button>
+
         <div className="logInSec">
           <div className="app_name">{APP_NAME}</div>
           <div className="heading">Create your account and start exploring</div>
@@ -735,7 +770,7 @@ const Index = () => {
             </button>
           </div>
           <div className="signIn">
-            Already have an account? <button>Sign In</button>
+            Already have an account? <button  onClick={handleRedirectSignIn}>Sign In</button>
           </div>
         </div>
       </section>
